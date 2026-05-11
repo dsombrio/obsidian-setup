@@ -1,39 +1,34 @@
 ---
 company_name: 84 Lumber
 type: customer
-address: 
-city: 
-state: TX
 metro: 
 status: active
-hubspot_id: 
-website: 
-tags: []
-created: 2026-03-26
+created: 2026-05-11
 notes: >
-  
+  Mill Creek project. Ray in Austin to review pricing.
+
 ---
 
 ## 84 Lumber
 
 **Type:** [[customer]]
+**Metro:** 
 **Status:** [[active]]
 
 ---
 
 ## Key Contacts
 
-- [[Contact - Sean Purtell]] () — 
+- [[Contact - ]]
 
 ---
 
 ## Active Deals
 
-- [[Deal - 84 Lumber Door Hardware]]
+- [[Deal - ]]
 
 ---
 
-## Account Notes
+## Notes
 
 > 
-
