@@ -1,54 +1,64 @@
 ---
-contact_name: <% tp.file.title %>
-first_name: 
-last_name: 
-company: 
-company_link: 
-title: 
-phone: 
-mobile: 
-email: 
-metro: 
-state: 
-type: contractor  # contractor | builder | vendor | distributor | internal
-status: active  # active | inactive | archived
-source: 
-hubspot_id: 
-tags: []
-created: <% tp.date.now("YYYY-MM-DD") %>
-last_contact: 
+type: contact
+id: {{CONTENT_ID}}
+created: {{CREATED_DATE}}
+tags:
+  - CRM
+  - contact
+  - territory/{{TERRITORY}}
+  - product/{{PRIMARY_PRODUCT}}
+aliases: []
+links:
+  - [[{{COMPANY}}]]
+  - [[deals/{{DEAL_NAME}}]]
+
+# Contact Information
+First Name:: {{FIRST_NAME}}
+Last Name:: {{LAST_NAME}}
+Full Name:: {{FULL_NAME}}
+Company:: [[{{COMPANY}}]]
+Job Title:: {{JOB_TITLE}}
+Email:: {{EMAIL}}
+Phone:: {{PHONE}}
+Mobile:: {{MOBILE}}
+
+# Location
+City:: {{CITY}}
+State:: {{STATE}}
+Address:: {{ADDRESS}}
+
+# Pipeline
+Stage:: {{STAGE}}
+Lead Source:: {{LEAD_SOURCE}}
+Last Contact:: {{LAST_CONTACT}}
+Next Step:: {{NEXT_STEP}}
+Follow-up Date:: {{FOLLOWUP_DATE}}
+
+# Notes
+# Overview::
+# Background::
+# Decision Maker::
+# Budget::
+# Timeline::
 ---
 
-## Contact Info
+## History
 
-**Company:** [[<% tp.file.title %>]]
-**Title:** 
-**Phone:** 
-**Email:** 
+| Date | Type | Summary | Outcome |
+|------|------|---------|---------|
+| {{DATE}} | {{TYPE}} | {{SUMMARY}} | {{OUTCOME}} |
 
----
+## Deals
 
-## Notes
+```dataview
+TABLE deal-name AS "Deal", amount AS "Value", stage AS "Stage", close-date AS "Close Date"
+FROM "CRM/Deals"
+WHERE contains(contacts, "{{FULL_NAME}}")
+SORT close-date ASC
+```
 
-> Background, relationship history, key conversation points
+## Related Notes
 
----
-
-## Active Deals
-
--
-
----
-
-## Contact History
-
-| Date | Type | Notes |
-|---|---|---|
-| <% tp.date.now("YYYY-MM-DD") %> |  |  |
-
----
-
-## Related
-
-- [[]]
-- [[Meeting - ]]
+- [[{{COMPANY}}]] — Company profile
+- [[{{RELATED_COMPANY_2}}]] — Related company
+- [[{{RELATED_NOTE}}}]] — Related note
